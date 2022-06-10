@@ -77,6 +77,7 @@ class Face_Recognition:
                         name = known_face_names[best_match_index]
                     face_names.append(name)
             process_this_frame = not process_this_frame
+            #to display the recogised faces
             for (top, right, bottom, left), name in zip(face_locations, face_names):
                 # Scale back up face locations since the frame we detected in was scaled to 1/4 size
                 top *= 4
