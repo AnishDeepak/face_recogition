@@ -9,6 +9,7 @@ import os
 import pickle
 from connet_sql_ssh import Connect
 
+
 class Face_Encodings:
 
     def check_id_img_dir(self,auto_id):
@@ -19,7 +20,7 @@ class Face_Encodings:
         known_face_names=[]
         no_img_ids=[]
         if  os.path.exists('inndata_emp_images')==False:
-            Connect.get_images(self)
+            Connect.down_from_remote(self)
         imagePaths = list(paths.list_images('inndata_emp_images'))
         for (i, imagePath) in enumerate(imagePaths):
             folder_name = imagePath.split(os.path.sep)[-2]
